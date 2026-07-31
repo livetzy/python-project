@@ -50,7 +50,6 @@ class Menu:
                     print('terimakasih telah berkunjung ke toko kami'.upper())
                     exit()
 
-
     def menu_makanan(self):
         daftar_makanan = []
         print('selamat Datang Di Menu Makanan'.upper())
@@ -72,7 +71,6 @@ class Menu:
                 self.menu_makanan()
             else:
                 print('\"terimakasih telah memesan\"\n\"mohon menunggu pesanannya\"')
-
 
     def menu_minuman(self):
         daftar_minuman = []
@@ -96,7 +94,7 @@ class Menu:
             else:
                 print('terimakasih telah memesan\nmohon menunggu pesanan anda')
     
-           
+
     def menu_snack(self):
         daftar_snack = []
         print('=== SELAMAT DATANG DI DAFTAR SNACK ===')
@@ -122,20 +120,39 @@ class Menu:
     def batalkan_pesanan(self):
         print('- makanan\n- minuman\n- snack'.upper())
         pilihan = input('ingin membatalkan pesanan menu apa :')
+
         if pilihan == 'makanan':
-            makanan = input('masukan menu makanan yang ingin di hapus :').upper()
-            for i in list_makanan:
-                if makanan  == i :
-                    list_makanan.remove(makanan)
-                    print('pesanan berhasil dibatalkan')
+                 print('pesanan anda :')
+                 for i in list_makanan:
+                     print('-', i)
+                 else:
+                     print('anda belum memesan menu makanan')
+                 makanan = input('masukan menu makanan yang ingin di hapus :').upper()
+                 for i in list_makanan:
+                        if makanan  == i :
+                            list_makanan.remove(makanan)
+                            print('pesanan berhasil dibatalkan')
+                    
         elif pilihan == 'minuman' :
+            print('pesanan anda :')
+            for nilai in list_minuman :
+                print('pesanan anda')
+                print('-', nilai)
+            else:
+                print('anda belum memesan menu minuman')
             minuman = input('masukan menu minuman yang ingin di hapus :').upper()
             for i in list_minuman:
                 if minuman == i :
                     list_minuman.remove(minuman)
                     print('pesanan berhasil di batalkan')
+
         elif pilihan == 'snack' :
-            snack = input('masukan menu snack yang ingin di hapus').upper()
+            print('pesanan anda :')
+            for nilai in list_snack :
+                print('-', nilai)
+            else:
+                print('anda belum memesan menu snack')
+            snack = input('masukan menu snack yang ingin di hapus :').upper()
             for i in list_snack :
                 if snack == i :
                     list_snack.remove(snack)
