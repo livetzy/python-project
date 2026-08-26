@@ -36,8 +36,6 @@ def Kalkulator():
             print(('sampai jumpa').upper())
             break
 
-        
-
 def menu() :
     print('MENU KALKULATOR')
     print('1. Kalkulator')

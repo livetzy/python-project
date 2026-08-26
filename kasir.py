@@ -7,6 +7,7 @@ class Menu:
         self.minuman = minuman
 
     def pesanan(self):
+         print('== PESANAN ANDA =='.upper())
          print('-' * 40)
          print('== pesanan makanan anda =='.upper())
          for menu in list_makanan:
@@ -23,7 +24,6 @@ class Menu:
              print('-',menu)
          print('-' * 40)
 
-
     def Pilihan(self):
         while True:
                 print('SELAMAT DATANG DI MENU')
@@ -37,7 +37,7 @@ class Menu:
                 pilihan = int(input('Masukan Pilihan Anda :'))
 
                 if pilihan == 1 :
-                    self.menu_makanan()
+                    self.menu_makanan() 
                 elif pilihan == 2 :
                     self.menu_minuman()
                 elif pilihan == 3:
@@ -66,7 +66,7 @@ class Menu:
             else:
                 print(f'{makanan} tidak terdapat di daftar menu')
 
-            lanjutan = input('ingin memesan lagi? :')
+            lanjutan = input('ingin memesan lagi? (ya/tidak) :')
             if lanjutan == 'ya':
                 self.menu_makanan()
             else:
@@ -88,13 +88,12 @@ class Menu:
                 list_minuman.append(minuman)
             else:
                 print('pesanan tidak ada di daftar menu')
-            lanjutan = input('ingin melanjutkan pemesanan?')
+            lanjutan = input('ingin melanjutkan pemesanan? (ya/tidak) :')
             if lanjutan == 'ya':
                 self.menu_minuman()
             else:
                 print('terimakasih telah memesan\nmohon menunggu pesanan anda')
     
-
     def menu_snack(self):
         daftar_snack = []
         print('=== SELAMAT DATANG DI DAFTAR SNACK ===')
@@ -111,7 +110,7 @@ class Menu:
                 list_snack.append(snack)
             else:
                 print('pesanan tidak terdapat di dalam menu')
-            lanjutan = input('ingin melanjutkan pesanan ? :')
+            lanjutan = input('ingin melanjutkan pesanan ? (ya/tidak):')
             if lanjutan == 'ya' :
                 self.menu_snack()
             else:
@@ -160,8 +159,7 @@ class Menu:
 
 if __name__ == '__main__':
     mahasiswa = Menu(makanan=list_makanan, minuman = list_minuman)
-    while True:
-        mahasiswa.Pilihan()
+    mahasiswa.Pilihan()
         
 
 
