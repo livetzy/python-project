@@ -1,51 +1,51 @@
 # import cv2
 # import mediapipe as mp
 
-# mp_hands = mp.solutions.hands
-# hands = mp_hands.Hands()
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands()
 
-# mp_draw = mp.solutions.drawing_utils
-
-
-# cap = cv2.VideoCapture(0)
-
-# while True:
-#     success, frame = cap.read()
+mp_draw = mp.solutions.drawing_utils
 
 
-#     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+cap = cv2.VideoCapture(0)
 
-#     result = hands.process(rgb)
+while True:
+    success, frame = cap.read()
 
-#     if result.multi_hand_landmarks:
-#         for hand in result.multi_hand_landmarks:
-#             mp_draw.draw_landmarks(
-#                 frame,
-#                 hand,
-#                 mp_hands.HAND_CONNECTIONS
-#             )
 
-#     cv2.imshow("Hand Tracking", frame)
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-#     if cv2.waitKey(1) == 27: 
-#         break
+    result = hands.process(rgb)
 
-# cap.release()
-# cv2.destroyAllWindows()
+    if result.multi_hand_landmarks:
+        for hand in result.multi_hand_landmarks:
+            mp_draw.draw_landmarks(
+                frame,
+                hand,
+                mp_hands.HAND_CONNECTIONS
+            )
 
-# from ursina import *
+    cv2.imshow("Hand Tracking", frame)
 
-# app = Ursina()
+    if cv2.waitKey(1) == 27: 
+        break
 
-# cube = Entity(
-#     model='cube',
-#     color=color.azure,
-#     scale=2
-# )
+cap.release()
+cv2.destroyAllWindows()
 
-# EditorCamera()
+from ursina import *
 
-# app.run()
+app = Ursina()
+
+cube = Entity(
+    model='cube',
+    color=color.azure,
+    scale=2
+)
+
+EditorCamera()
+
+app.run()
 
 import cv2
 import mediapipe as mp
