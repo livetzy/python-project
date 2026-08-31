@@ -3,6 +3,7 @@ import random
 angka_random = random.randint(1,10)
 angka_random2 = random.randint(1,100)
 angka_random3 = random.randint(1,1000)
+angka_random4 = random.randint(100,1000)
 batas_tebakan = 10
 def permainan():
     print('== SELAMAT DATANG DI PERMAINAN TEBAK ANGKA ==')
@@ -18,6 +19,8 @@ def permainan():
         tebak_angka2()
     elif pilihan == 3 :
         tebak_angka3()
+    elif pilihan == 4 :
+        tebak_angka4()
 
 def tebak_angka1():
     tebakan1 = 0
@@ -100,5 +103,31 @@ def tebak_angka3():
 
     else:
         print(f'batas tebakan anda habis, angka random nya adalah {angka_random3}')
+
+def tebak_angka4():
+    tebakan4 = 0
+    print('HALO SELAMAT DATANG DI PERMAINAN TEBAK ANGKA')
+    print('RANGE TEBAKAN ANDA ADALAH 100 - 1000')
+    print('Selamat Mencoba Gudluck!!')
+
+    while batas_tebakan > tebakan4 :
+
+        angka_tebakan = int(input('masukan angka tebakan anda :'))
+
+        if angka_tebakan > angka_random4 :
+            print('tebakan salah , angka kebesaran')
+            tebakan4 += 1 
+            print(f'sisah percobaan anda {batas_tebakan - tebakan4}')
+
+        elif angka_tebakan < angka_random4 :
+            print('angka salah , tebakan kekecilan')
+            tebakan4 += 1
+            print(f'sisah percobaan anda {batas_tebakan - tebakan4}')
+
+        else:
+            print(f'Tebakan Anda Benar!!!, angka random nya = {angka_random4}')
+
+    else:
+        print(f'batas tebakan anda habis , angka random nya adalah {angka_random4}')
 
 permainan()
