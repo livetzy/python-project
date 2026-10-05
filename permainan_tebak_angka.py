@@ -5,14 +5,19 @@ angka_random2 = random.randint(1,100)
 angka_random3 = random.randint(1,1000)
 angka_random4 = random.randint(100,1000)
 batas_tebakan = 10
+
 def permainan():
     print('== SELAMAT DATANG DI PERMAINAN TEBAK ANGKA ==')
     print('silahkan pilih range angka yang ingin anda tebak')
+    print('=' * 50)
+    print('semakin tinggi range angka yang anda pilih , semakin sulit tebakan nya')
     print('1. (1 - 10)')
     print('2. (1 - 100)')
     print('3. (1 - 1000)')
-
+    print('4. (100 - 1000)')
+    print('5. keluar dari permainan')
     pilihan = int(input('masukan pilihan anda :'))
+
     if pilihan == 1 :
         tebak_angka1()
     elif pilihan == 2 :
@@ -21,6 +26,9 @@ def permainan():
         tebak_angka3()
     elif pilihan == 4 :
         tebak_angka4()
+    elif pilihan == 5 :
+        print('Terimakasih telah bermain, sampai jumpa lagi!!')
+        exit()
 
 def tebak_angka1():
     tebakan1 = 0
@@ -35,7 +43,7 @@ def tebak_angka1():
         if angka_tebakan > angka_random :
             print('tebakan salah , angka tebakan lewat')
             tebakan1 += 1
-            print(f'percobaan tersisah {batas_tebakan - tebakan1}')
+            print(f'percobaan tersisah {batas_tebakan - tebakan1}') 
 
         if angka_tebakan < angka_random :
             print('tebakan salah , angka  tebakan kurang')
@@ -45,7 +53,6 @@ def tebak_angka1():
         else:
             print(f'YAA angka tebakan anda benar!! {angka_random}')
             break
-
     else: 
         print(f'batas tebakan anda habis, angka random nya adalah {angka_random}')
 
@@ -64,14 +71,13 @@ def tebak_angka2():
             tebakan2 += 1
             print(f'sisah percobaan {batas_tebakan - tebakan2}')
             
-
         if angka_tebakan < angka_random2 :
             print('tebakan salah , angka terlalu kecil')
             tebakan2 += 1
             print(f'sisah percobaan {batas_tebakan - tebakan2}')
 
         else:
-            print(f'YAA angka tebakan anda benar!! {angka_random}')
+            print(f'YAA angka tebakan anda benar!! {angka_random2}')
             break
 
     else:
@@ -100,7 +106,6 @@ def tebak_angka3():
         else:
             print(f'jawaban kamu benar!!, angka nya {angka_random3}')
             break
-
     else:
         print(f'batas tebakan anda habis, angka random nya adalah {angka_random3}')
 

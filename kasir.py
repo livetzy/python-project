@@ -12,8 +12,8 @@ class Menu:
          print('== pesanan makanan anda =='.upper())
          for menu in list_makanan:
           print('-',menu)
-         print('-' * 40)
- 
+          print('-' * 40)
+  
          print('== pesanan minuman anda =='.upper())
          for menu in list_minuman:
             print('-',menu)
