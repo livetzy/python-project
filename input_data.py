@@ -14,6 +14,7 @@ class Mahasiswa():
     def tambah_data(self,n):
         laporan = ""
         for data in n:
+         
          laporan += F"""
     NAMA = {data[0]}
     NIM = {data[1]}
