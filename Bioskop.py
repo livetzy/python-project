@@ -1,10 +1,10 @@
-penonton = 0
+total_penonton = 0
 diskon = 0
 def menu():
-    global diskon , penonton
+    global diskon , total_penonton
     print("selamat Datang di bioskop".capitalize())
     penonton = int(input("masukan jumlah penonton : ").capitalize())
-    penonton += penonton
+    total_penonton += penonton
     if penonton < 5 :
         diskon += 0
     elif penonton >= 5 and penonton < 10 : 
@@ -34,19 +34,47 @@ def menu():
 
 pilihan_film = []
 def daftar_film():
-      print("silahkan pilih film yang ingin anda tonton".capitalize())
-      with open ("Daftar_film.txt" , "r") as file:
-            for i in file:
-                data = i.strip()
-                print( "-" , data)
-              
-            print("Silahkan Pilih Film Anda :".capitalize())
-            film = input("Masukan Judul FIlm :").capitalize()
-            pilihan_film.append(film)
-            print("Terimakasih Telah memesan tiket".capitalize())
-            print("silahkan cek kembali pesanan anda di bagian \"Pesanan\"".capitalize())
+    print("selamat datang si daftar film".capitalize())
 
+    kategori = ["Horor","Drama dan Keluarga","Aksi dan Petualangan","Thriller, Kriminal, dan Misteri","Animasi dan Fantasi"]
 
+    for indeks, nama in enumerate(kategori, start=1): 
+        print(f" {indeks}. {nama}")
+
+    pilihan = int(input("masukan pilihan anda : ").capitalize())
+
+    if 1 <= pilihan <= len(kategori):
+        pilihan = kategori[pilihan - 1]
+
+    sedang_baca = False
+
+    with open ("Daftar_film.txt", "r", encoding="utf-8") as file:
+
+        for baris in file :
+            baris = baris.strip()
+
+            if not baris:
+                continue
+
+            if not baris.startswith("-"):
+                sedang_baca = baris.lower() == pilihan.lower()
+
+                if sedang_baca:
+                    print(f"\n{baris}")
+
+                continue
+
+            if sedang_baca:
+                print(baris)
+
+        else:
+            print("pilihan tidak tersedia".capitalize())
+
+    film = input("masukan film yang ingin anda tonton : ".capitalize())
+    pilihan_film.append(film)
+    
+
+pilihan_snack = []
 def snack():
     kategori = ["Bakery dan Pastry", "Snack Gurih", "Roti dan Makanan Ringan", "Dessert"]
 
@@ -83,10 +111,25 @@ def snack():
     else:
         print("Pilihan Tidak tersedia")
 
-def pesanan():
-     print(f'Total Penonton : {penonton}'.capitalize())
-     print(f"diskon yang di peroleh : {diskon}")
-     print(f"film yang di pilih : {pilihan_film}")
-            
+    while True :
 
+      snack = input("Masukan snack yang anda inginkan : ".capitalize())
+      lanjutan = input("ingin memesan snack lagi? (y/n) : ")
+
+      if lanjutan != 'y' :
+          print("terimakasih telah memesan")
+          break
+      
+      pilihan_snack.append(snack)
+
+def pesanan():
+     print(f'Total Penonton : {total_penonton}'.capitalize())
+     print(f"diskon yang di peroleh : {diskon}".capitalize())
+
+     for indeks, (snack,film )in enumerate(zip(pilihan_snack, pilihan_film), start=1):
+        print("")
+        print("pesanan anda :".capitalize())
+        print(f"film : {indeks}. {film}\n".capitalize())
+        print(f" snack :{indeks}. {snack}\n".capitalize())
+                
 menu()

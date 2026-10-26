@@ -1,4 +1,4 @@
-Bakery dan Pastry :
+Bakery dan Pastry 
 - Butter croissant
 - Chocolate croissant
 - Cheese Danish
@@ -8,7 +8,7 @@ Bakery dan Pastry :
 - Cookies
 - Cromboloni 
 
-Snack Gurih :
+Snack Gurih 
 - French fries
 - Chicken nuggets
 - Sosis goreng
@@ -16,7 +16,7 @@ Snack Gurih :
 - Chicken wings
 - Garlic bread
 
-Roti dan Makanan Ringan:
+Roti dan Makanan Ringan
 - Chicken sandwich
 - Beef sandwich
 - Cheese toast
@@ -24,7 +24,7 @@ Roti dan Makanan Ringan:
 - Garlic cheese bread
 - Mini pizza
 
-Dessert :
+Dessert 
 - Brownies
 - Cheesecake
 - Tiramisu
