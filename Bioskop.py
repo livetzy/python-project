@@ -115,21 +115,19 @@ def snack():
 
       snack = input("Masukan snack yang anda inginkan : ".capitalize())
       lanjutan = input("ingin memesan snack lagi? (y/n) : ")
-
+      pilihan_snack.append(snack)
+      
       if lanjutan != 'y' :
           print("terimakasih telah memesan")
           break
       
-      pilihan_snack.append(snack)
+
 
 def pesanan():
      print(f'Total Penonton : {total_penonton}'.capitalize())
      print(f"diskon yang di peroleh : {diskon}".capitalize())
-
-     for indeks, (snack,film )in enumerate(zip(pilihan_snack, pilihan_film), start=1):
-        print("")
-        print("pesanan anda :".capitalize())
-        print(f"film : {indeks}. {film}\n".capitalize())
-        print(f" snack :{indeks}. {snack}\n".capitalize())
-                
+     for indeks, menu in enumerate(pilihan_snack,start=1):
+        print(f'{indeks}. {menu}')
+     print()
+                    
 menu()
