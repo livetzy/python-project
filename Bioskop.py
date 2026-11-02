@@ -67,11 +67,8 @@ def daftar_film():
             if sedang_baca:
                 print(baris)
 
-        else:
-            print("pilihan tidak tersedia".capitalize())
-
-    film = input("masukan film yang ingin anda tonton : ".capitalize())
-    pilihan_film.append(film)
+        film = input("masukan film yang ingin anda tonton : ".capitalize())
+        pilihan_film.append(film + "\n")
     
 
 pilihan_snack = []
@@ -126,6 +123,10 @@ def snack():
 def pesanan():
      print(f'Total Penonton : {total_penonton}'.capitalize())
      print(f"diskon yang di peroleh : {diskon}".capitalize())
+     print()
+     print("daftar film yang ")
+     for indeks, film in enumerate(pilihan_film, start=1):
+         print(f"{indeks}. {film}")
      for indeks, menu in enumerate(pilihan_snack,start=1):
         print(f'{indeks}. {menu}')
      print()
