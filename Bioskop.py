@@ -3,14 +3,18 @@ diskon = 0
 def menu():
     global diskon , total_penonton
     print("selamat Datang di bioskop".capitalize())
-    penonton = int(input("masukan jumlah penonton : ").capitalize())
-    total_penonton += penonton
-    if penonton < 5 :
-        diskon += 0
-    elif penonton >= 5 and penonton < 10 : 
-        diskon += 0.20
-    elif penonton >= 10 :
-        diskon += 0.30
+    try:
+        penonton = int(input("masukan jumlah penonton : ").capitalize())
+        total_penonton += penonton
+        if penonton < 5 :
+            diskon += 0
+        elif penonton >= 5 and penonton < 10 : 
+            diskon += 0.20
+        elif penonton >= 10 :
+            diskon += 0.30
+
+    except ValueError:
+        print("Input tidak valid. input harus berupa angka.")
 
     while True:
 
@@ -124,9 +128,10 @@ def pesanan():
      print(f'Total Penonton : {total_penonton}'.capitalize())
      print(f"diskon yang di peroleh : {diskon}".capitalize())
      print()
-     print("daftar film yang ")
+     print("daftar film yang di pesan :".title())
      for indeks, film in enumerate(pilihan_film, start=1):
          print(f"{indeks}. {film}")
+     print('daftar snack yang di pesan :'.title())
      for indeks, menu in enumerate(pilihan_snack,start=1):
         print(f'{indeks}. {menu}')
      print()
