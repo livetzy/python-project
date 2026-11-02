@@ -23,18 +23,21 @@ def menu():
         print("3. pesanan".capitalize())
         print("4. keluar".capitalize())
         pilihan = int(input("Masukan Pilihan Anda : "))
-
-        if pilihan == 1 :
-            daftar_film()
-        elif pilihan == 2 :
-            snack()
-        elif pilihan == 3 :
-            pesanan()
-        elif pilihan == 4 :
-            print("Terimakasih Telah Memesan\nselamat menikmati film anda")
-            exit()
-        else:
-            print("Input anda tidak valid")
+        try:
+            if pilihan == 1 :
+                daftar_film()
+            elif pilihan == 2 :
+                snack()
+            elif pilihan == 3 :
+                pesanan()
+            elif pilihan == 4 :
+                print("Terimakasih Telah Memesan\nselamat menikmati film anda")
+                exit()
+            else:
+                print("Input anda tidak valid")
+        except ValueError:
+            print("input tidak valid. input harus berupa angka.")
+            
 
 pilihan_film = []
 def daftar_film():
