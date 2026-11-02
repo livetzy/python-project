@@ -12,9 +12,9 @@ def menu():
             diskon += 0.20
         elif penonton >= 10 :
             diskon += 0.30
-
     except ValueError:
-        print("Input tidak valid. input harus berupa angka.")
+            print("Input tidak valid. input harus berupa angka.")
+            total_penonton += penonton
 
     while True:
 
@@ -22,22 +22,23 @@ def menu():
         print("2. beli snack".capitalize())
         print("3. pesanan".capitalize())
         print("4. keluar".capitalize())
-        pilihan = int(input("Masukan Pilihan Anda : "))
         try:
-            if pilihan == 1 :
-                daftar_film()
-            elif pilihan == 2 :
-                snack()
-            elif pilihan == 3 :
-                pesanan()
-            elif pilihan == 4 :
-                print("Terimakasih Telah Memesan\nselamat menikmati film anda")
-                exit()
-            else:
-                print("Input anda tidak valid")
+            pilihan = int(input("Masukan Pilihan Anda : "))
         except ValueError:
             print("input tidak valid. input harus berupa angka.")
-            
+            continue
+
+        if pilihan == 1 :
+            daftar_film()
+        elif pilihan == 2 :
+            snack()
+        elif pilihan == 3 :
+            pesanan()
+        elif pilihan == 4 :
+            print("Terimakasih Telah Memesan\nselamat menikmati film anda")
+            exit()
+        else:
+            print("Input anda tidak valid")
 
 pilihan_film = []
 def daftar_film():
